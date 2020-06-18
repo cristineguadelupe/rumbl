@@ -12,4 +12,8 @@ defmodule Rumbl.Accounts do
             %User{id: "3", name: "Chris", username: "chrismcord"}
         ]
     end
+
+    def get_user(id) do
+        Enum.fin(list_users(), fn map -> map.id == id end)
+    end
 end
