@@ -17,4 +17,8 @@ defmodule RumblWeb.ErrorView do
   def render("500.html", _assings) do
     "Internal server error"
   end
+
+  def render("400.html", _assigns) do
+    "Page not found"
+  end
 end
