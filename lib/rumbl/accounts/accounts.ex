@@ -9,7 +9,8 @@ defmodule Rumbl.Accounts do
         [
             %User{id: "1", name: "José", username: "josevalim"},
             %User{id: "2", name: "Bruce", username: "redrapis"},
-            %User{id: "3", name: "Chris", username: "chrismcord"}
+            %User{id: "3", name: "Chris", username: "chrismcord"},
+            %User{id: "4", name: "Susie", username: "susie"}
         ]
     end
 
