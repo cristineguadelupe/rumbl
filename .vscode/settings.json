@@ -1,7 +1,0 @@
-{
-    "scss.validate": false,
-    "emmet.includeLanguages": {
-        "html-eex": "html"
-    },
-    "rainbowTags.allowEverywhere": true
-}
