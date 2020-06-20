@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <section class="phx-hero">
   <h1><%= gettext "Welcome to %{name}!", name: "Rumbl.io" %></h1>
   <p>Rumbl out loud.</p>
