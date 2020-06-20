@@ -1,6 +1,6 @@
 {
     "scss.validate": false,
-    // "files.associations": {
-    //     "*.html.eex": ["html"]
-    // }
+    "emmet.includeLanguages": {
+        "html-eex": "html"
+    }
 }
