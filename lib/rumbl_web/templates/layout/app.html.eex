@@ -12,7 +12,7 @@
 
 <body>
   <header>
-    <nav role="navigation" class="bg-teal-500">
+    <nav role="navigation" class="bg-gray-700">
 
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px:8">
 
