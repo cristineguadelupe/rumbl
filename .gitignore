@@ -34,6 +34,7 @@ npm-debug.log
 /priv/static/
 
 # Global gitignore for VS Code
+.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
