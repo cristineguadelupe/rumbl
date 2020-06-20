@@ -1,10 +1,32 @@
 <h1 class="text-purple-700 text-5xl font-bold text-center">Listing Users</h1>
 
-<table>
-    <%= for user <- @users do %>
-    <tr>
-        <td><%= render "user.html", user: user %> </td>
-        <td><%= link "View", to: Routes.user_path(@conn, :show, user.id) %></td>
-    </tr>
-    <% end %>
-</table>
+<div class="flex flex-col">
+  <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+   <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+    <table class="min-w-full">
+       <thead>
+          <tr>
+            <th class="px-6 py-3 border-b border-purple-200 bg-gray-50 text-left text-xs leading-4 font-medium text-purple-500 uppercase tracking-wider">
+              User
+            </th>
+            <th class="px-6 py-3 border-b border-purple-200 bg-gray-50 text-left text-xs leading-4 font-medium text-purple-500 uppercase tracking-wider">
+              View
+            </th>
+          </tr>
+        </thead>
+        <tbody class="bg-white">
+        <%= for user <- @users do %>
+        <tr>
+            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+              <%= render "user.html", user: user %> 
+            </td>
+            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+              <%= link "View", to: Routes.user_path(@conn, :show, user.id) %>
+            </td>
+        </tr>
+        <% end %>
+        </tbody>
+    </table>
+  </div>
+  </div>
+</div>
