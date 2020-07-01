@@ -1,19 +1,19 @@
-<h1 class="text-teal-400 m-4">New User</h1>
+<h1 class="text-teal-400 m-4 text-lg">New User</h1>
 
 <%= form_for @changeset, Routes.user_path(@conn, :create), fn f -> %>
 
    <%= if @changeset.action do %>
         <div clas="alert alert-danger">
-            <p>Oops, something went wrong! Please check the errors below.</p>
+            <p class="text-red-700">Oops, something went wrong! Please check the errors below.</p>
         </div>
     <% end %>
     <div class="m-4">
         <%= text_input f, :name, placeholder: "Name", class: "border-2 border-teal-400 p-2"%>
-        <%= error_tag f, :name %>
+        <p class="text-red-500"><%= error_tag f, :name %></p>
     </div>
     <div class="m-4">
         <%= text_input f, :username, placeholder: "Username", class: "border-2 border-teal-400 p-2"%>
-        <% error_tag f, :username %>
+        <p class="text-red-500"><%= error_tag f, :username %></p>
     </div>
     <%= submit "Create User", class: "mx-4 p-4 bg-teal-400 text-teal-50 border hover:bg-teal-700"%>
 <% end %>
