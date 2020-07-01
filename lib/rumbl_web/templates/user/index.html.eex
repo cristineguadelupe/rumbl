@@ -1,15 +1,14 @@
-<h1 class="text-purple-700 text-5xl font-bold text-center">Listing Users</h1>
+<h1 class="text-teal-500 text-5xl font-bold text-center">Listing Users</h1>
 
-<div class="flex flex-col">
-  <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-   <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
-    <table class="min-w-full">
+<div class="container mx-auto">
+   <div class="flex justify-center w-auto py-4">
+    <table class="w-auto border border-teal-50">
        <thead>
           <tr>
-            <th class="px-6 py-3 border-b border-purple-200 bg-gray-50 text-left text-xs leading-4 font-medium text-purple-500 uppercase tracking-wider">
+            <th class="px-6 py-3 border-b border-teal-200 bg-gray-50 text-left text-xs leading-4 font-medium text-teal-500 uppercase tracking-wider">
               User
             </th>
-            <th class="px-6 py-3 border-b border-purple-200 bg-gray-50 text-left text-xs leading-4 font-medium text-purple-500 uppercase tracking-wider">
+            <th class="px-6 py-3 border-b border-teal-200 bg-gray-50 text-left text-xs leading-4 font-medium text-teal-500 uppercase tracking-wider">
               View
             </th>
           </tr>
@@ -18,7 +17,7 @@
         <%= for user <- @users do %>
         <tr>
             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-              <%= render "user.html", user: user %> 
+              <%= render "user.html", user: user %>
             </td>
             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
               <%= link "View", to: Routes.user_path(@conn, :show, user.id) %>
@@ -27,6 +26,5 @@
         <% end %>
         </tbody>
     </table>
-  </div>
   </div>
 </div>

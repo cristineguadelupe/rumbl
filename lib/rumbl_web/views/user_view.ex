@@ -8,4 +8,8 @@ defmodule RumblWeb.UserView do
         |> String.split(" ")
         |> Enum.at(0)
     end
+
+    def username(%Accounts.User{username: username}) do
+        username
+    end
 end
