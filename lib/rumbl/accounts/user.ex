@@ -9,7 +9,7 @@ defmodule Rumbl.Accounts.User do
         timestamps()
     end
 
-    def changset(user, attrs) do
+    def changeset(user, attrs) do
         user
         |> cast(attrs, [:name, :username])
         |> validate_required([:name, :username])
