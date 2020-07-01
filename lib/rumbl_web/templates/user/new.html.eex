@@ -15,5 +15,5 @@
         <%= text_input f, :username, placeholder: "Username", class: "border-2 border-teal-400 p-2"%>
         <p class="text-red-500"><%= error_tag f, :username %></p>
     </div>
-    <%= submit "Create User", class: "mx-4 p-4 bg-teal-400 text-teal-50 border hover:bg-teal-700"%>
+    <%= submit "Create User", class: "mx-4 p-4 bg-teal-400 text-teal-50 border hover:bg-teal-500"%>
 <% end %>
