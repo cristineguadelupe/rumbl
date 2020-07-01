@@ -25,4 +25,11 @@ defmodule Rumbl.Accounts do
         User.changeset(user, %{})
     end
 
+    # If we want a default value for an argument we use the argument \\ value syntax
+    def create_user(attrs \\ %{}) do
+        %User{}
+        |> User.changeset(attrs)
+        |> Repo.insert()
+    end
+
 end
