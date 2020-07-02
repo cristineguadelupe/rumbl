@@ -1,0 +1,16 @@
+<h1 class="text-teal-400 m-4 text-2xl">Login Form</h1>
+
+<%= form_for @conn,
+        Routes.session_path(@conn, :create),
+        [as: :session],
+        fn f -> %>
+
+    <div class="m-4">
+        <%= text_input f, :username, placeholder: "Username", class: "border-2 border-teal-400 p-2" %>
+    </div>
+    <div class="m-4">
+        <%= password_input f, :password, placeholder: "Password", class: "border-2 border-teal-400 p-2" %>
+    </div>
+    <%= submit "Log in", class: "mx-4 p-4 bg-teal-400 text-teal-50 border hover:bg-teal-500" %>
+
+<% end %>
