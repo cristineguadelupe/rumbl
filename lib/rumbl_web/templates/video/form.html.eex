@@ -5,19 +5,25 @@
     </div>
   <% end %>
 
-  <%= label f, :url %>
-  <%= text_input f, :url %>
-  <%= error_tag f, :url %>
+  <div class="m-4">
+    <%= label f, :url, class: "p-2" %><br>
+    <%= text_input f, :url, class: "border-2 border-teal-400 p-2 m-2" %>
+    <%= error_tag f, :url %>
+  </div>
 
-  <%= label f, :title %>
-  <%= text_input f, :title %>
-  <%= error_tag f, :title %>
+  <div class="m-4">
+    <%= label f, :title, class: "p-2" %><br>
+    <%= text_input f, :title, class: "border-2 border-teal-400 p-2 m-2" %>
+    <%= error_tag f, :title %>
+  </div>
 
-  <%= label f, :description %>
-  <%= textarea f, :description %>
-  <%= error_tag f, :description %>
+  <div class="m-4">
+    <%= label f, :description, class: "p-2" %><br>
+    <%= textarea f, :description, class: "border-2 border-teal-400 p-2 m-2" %>
+    <%= error_tag f, :description %>
+  </div>
 
   <div>
-    <%= submit "Save" %>
+    <%= submit "Save", class: "mx-6 p-4 bg-teal-400 text-teal-50 border hover:bg-teal-500" %>
   </div>
 <% end %>

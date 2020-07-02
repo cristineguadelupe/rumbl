@@ -2,4 +2,6 @@
 
 <%= render "form.html", Map.put(assigns, :action, Routes.video_path(@conn, :create)) %>
 
-<span><%= link "Back", to: Routes.video_path(@conn, :index) %></span>
+<p class="m-6 p-2 text-center bg-gray-400 text-teal-50 border hover:bg-teal-500 w-24">
+<%= link "Back", to: Routes.video_path(@conn, :index) %>
+</p>
