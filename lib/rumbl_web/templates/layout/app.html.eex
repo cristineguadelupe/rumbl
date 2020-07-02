@@ -10,20 +10,19 @@
   <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
 </head>
 
-<body>
+<body class="bg-cool-gray-100">
   <header>
-
-    <section class="container mx-auto">
+    <section class="container p-4 mx-auto bg-cool-gray-100">
       <nav role="navgation">
-        <ul>
+        <ul class="flex">
           <%= if @current_user do %>
-            <li><%= @current_user.username %></li>
-            <li>
+            <li class="mr-6 bg-teal-50 p-4 text-teal-600 font-mono">Welcome back <%= @current_user.username %></li>
+            <li class="mr-6 bg-teal-100 p-4 text-teal-700 hover:bg-teal-300">
               <%= link "Log out", to: Routes.session_path(@conn, :delete, @current_user), method: "delete" %>
             </li>
           <% else %>
-            <li><%= link "Register", to: Routes.user_path(@conn, :new) %></li>
-            <li><%= link "Log in", to: Routes.session_path(@conn, :new) %></li>
+            <li class="mr-6 bg-teal-100 p-4 text-teal-700 hover:bg-teal-300"><%= link "Register", to: Routes.user_path(@conn, :new) %></li>
+            <li class="mr-6 bg-teal-100 p-4 text-teal-700 hover:bg-teal-300"><%= link "Log in", to: Routes.session_path(@conn, :new) %></li>
           <% end %>
         </ul>
       </nav>
@@ -31,12 +30,11 @@
 
   </header>
 
-  <main role="main" class="container mx-auto">
+  <main role="main" class="container p-4 mx-auto">
     <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
     <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
     <%= @inner_content %>
   </main>
-
 </body>
 
 </html>
