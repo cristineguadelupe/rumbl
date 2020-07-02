@@ -1,4 +1,4 @@
-defmodule RumblWEb.Auth do
+defmodule RumblWeb.Auth do
   import Plug.Conn
 
   def init(opts), do: opts

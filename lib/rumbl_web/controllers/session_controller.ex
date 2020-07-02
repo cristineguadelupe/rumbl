@@ -9,7 +9,7 @@ defmodule RumblWeb.SessionController do
     case Rumbl.Accounts.authenticate_by_username_and_pass(username, pass) do
       {:ok, user} ->
         conn
-        |> RumblWEb.Auth.login(user)
+        |> RumblWeb.Auth.login(user)
         |> put_flash(:info, "Welcome back!")
         |> redirect(to: Routes.page_path(conn, :index))
 
@@ -19,6 +19,12 @@ defmodule RumblWeb.SessionController do
         |> render("new.html")
 
     end
+  end
+
+  def delete(conn, _) do
+    conn
+    |> RumblWeb.Auth.logout()
+    |> redirect(to: Routes.page_path(conn, :index))
   end
 
 end
