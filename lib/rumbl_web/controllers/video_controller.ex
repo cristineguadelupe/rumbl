@@ -15,7 +15,7 @@ defmodule RumblWeb.VideoController do
   end
 
   def create(conn, %{"video" => video_params}) do
-    case Multimedia.create_video(video_params) do
+    case Multimedia.create_video(conn.assigns.current_user, video_params) do
       {:ok, video} ->
         conn
         |> put_flash(:info, "Video created successfully.")
@@ -58,5 +58,10 @@ defmodule RumblWeb.VideoController do
     conn
     |> put_flash(:info, "Video deleted successfully.")
     |> redirect(to: Routes.video_path(conn, :index))
+  end
+
+  def action(conn, _) do
+    args = [conn, conn.params, conn.assigns.current_user]
+    apply(__MODULE__, action_name(conn), args)
   end
 end
