@@ -34,4 +34,13 @@ defmodule Rumbl.AccountsTest do
     assert [%User{id: ^id}] = Accounts.list_users()
   end
 
+  test "does not accept long usernames" do
+    attrs = Map.put(@valid_attrs, :username, String.duplicate("a", 30))
+    {:error, changeset} = Accounts.register_user(attrs)
+
+    assert %{username: ["should be at most 20 character(s)"]} = errors_on(changeset)
+    assert Accounts.list_users() == []
+
+  end
+
 end
