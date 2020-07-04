@@ -1,28 +1,28 @@
 <h1>Listing Videos</h1>
 
-<table>
+<table class="table-auto">
   <thead>
     <tr>
-      <th>Url</th>
-      <th>Title</th>
-      <th>Description</th>
+      <th class="px-4 py-2">Url</th>
+      <th class="px-4 py-2">Title</th>
+      <th class="px-4 py-2">Description</th>
 
       <th></th>
     </tr>
   </thead>
   <tbody>
 <%= for video <- @videos do %>
-    <tr>
-      <td><%= video.url %></td>
-      <td><%= video.title %></td>
-      <td><%= video.description %></td>
+    <tr class="bg-cool-gray-50">
+      <td class="border px-4 py-2"><%= video.url %></td>
+      <td class="border px-4 py-2"><%= video.title %></td>
+      <td class="border px-4 py-2"><%= video.description %></td>
 
-      <td>
+      <td class="border px-4 py-2">
         <span><%= link "Show", to: Routes.video_path(@conn, :show, video) %></span>
         <span><%= link "Edit", to: Routes.video_path(@conn, :edit, video) %></span>
         <span><%= link "Delete", to: Routes.video_path(@conn, :delete, video), method: :delete, data: [confirm: "Are you sure?"] %></span>
       </td>
-      <td>
+      <td class="border px-4 py-2">
         <%= link "Watch", to: Routes.watch_path(@conn, :show, video), class: "button" %>
       </td>
     </tr>
