@@ -21,4 +21,9 @@ defmodule Rumbl.AccountsTest do
     assert [%User{id: ^id}] = Accounts.list_users()
   end
 
+  test "with invalid data does not insert user" do
+    assert {:error, _changeset} = Accounts.register_user(@invalid_attrs)
+    assert Accounts.list_users() == []
+  end
+
 end
