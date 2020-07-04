@@ -43,4 +43,12 @@ defmodule Rumbl.AccountsTest do
 
   end
 
+  test "requires password to be at least 6 chars long" do
+    attrs = Map.put(@valid_attrs, :password, "12345")
+    {:error, changeset} = Accounts.register_user(attrs)
+
+    assert %{password: ["should be at least 6 character(s)"]} = errors_on(changeset)
+    assert Accounts.list_users() == []
+  end
+
 end
