@@ -12,18 +12,16 @@
 
 <body class="bg-cool-gray-100">
   <header>
-
-    <nav role="navigation">
-      <ul>
-        
-      </ul>
-    </nav>
-
     <section class="container p-4 mx-auto bg-cool-gray-100">
       <nav role="navgation">
         <ul class="flex">
           <%= if @current_user do %>
-            <li class="mr-6 bg-teal-50 p-4 text-teal-600 font-mono">Welcome back <%= @current_user.username %></li>
+            <li class="mr-6 bg-teal-50 p-4 text-teal-600 font-mono">
+              Welcome back <%= @current_user.username %>
+            </li>
+            <li class="mr-6 bg-teal-100 p-4 text-teal-700 hover:bg-teal-300">
+              <%= link "My Videos", to: Routes.video_path(@conn, :index) %>
+            </li>
             <li class="mr-6 bg-teal-100 p-4 text-teal-700 hover:bg-teal-300">
               <%= link "Log out", to: Routes.session_path(@conn, :delete, @current_user), method: "delete" %>
             </li>
