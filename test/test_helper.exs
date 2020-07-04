@@ -1,25 +1,34 @@
 ExUnit.start()
 Ecto.Adapters.SQL.Sandbox.mode(Rumbl.Repo, :manual)
 
-def user_fixture(attrs \\ %{}) do
-  {:ok, user} =
-    attrs
-    |> Enum.into(%{
-      name: "Some User",
-      username: "user#{System.unique_integer([:positive])}"
-      password: attrs[:password] || "supersecret"
-    })
-    |> Accounts.register_user()
-end
+defmodule Rumbl.TestHelpers do
 
-def video_fixture(%Accounts.User{} = users, attrs \\ %{}) do
-  attrs =
-    Enum.into(attrs, %{
-      title: "A title",
-      url: "http://example.com",
-      description: "a description"
-    })
+  alias Rumbl.{
+    Accounts,
+    Multimedia
+  }
 
-    {:ok, video} = Multimedia.create_video(user, attrs)
-    video
+  def user_fixture(attrs \\ %{}) do
+    {:ok, user} =
+      attrs
+      |> Enum.into(%{
+        name: "Some User",
+        username: "user#{System.unique_integer([:positive])}"
+        password: attrs[:password] || "supersecret"
+      })
+      |> Accounts.register_user()
+  end
+
+  def video_fixture(%Accounts.User{} = users, attrs \\ %{}) do
+    attrs =
+      Enum.into(attrs, %{
+        title: "A title",
+        url: "http://example.com",
+        description: "a description"
+      })
+
+      {:ok, video} = Multimedia.create_video(user, attrs)
+      video
+  end
+
 end
