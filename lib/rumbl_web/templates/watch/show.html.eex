@@ -6,14 +6,14 @@
          <% end %>
     </div>
 
-    <div class="bg-cool-gray-300">
+    <div class="bg-cool-gray-300 p-4">
         <h3>Annotations</h3>
 
         <div id="msg-container">
         </div>
 
-        <div>
-            <textarea id="msg-input" rows="3" placeholder="Comment...">
+        <div class="mx-auto">
+            <textarea id="msg-input" class="w-1/3" rows="3" placeholder="Comment...">
             </textarea>
 
             <button id="msg-submit" class="button column" type="submit">
