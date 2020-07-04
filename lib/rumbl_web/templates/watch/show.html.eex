@@ -2,28 +2,26 @@
 
     <div class="flex flex-wrap">
         <h1 class="w-full"><%= @video.title %></h1>
-        <%= content_tag :div, id: "video",
-         data: [id: @video.id, player_id: player_id(@video)] do %>
-         <% end %>
-
+        <div class="mx-4 border-2 shadow-xs">
+            <%= content_tag :div, id: "video",
+            data: [id: @video.id, player_id: player_id(@video)] do %>
+            <% end %>
+         </div>
     </div>
 
-    <div class="bg-cool-gray-300 p-4">
-        <h3>Annotations</h3>
+    <div class="p-4">
+        <h3 class="text-teal-700 text-lg py-2">Annotations:</h3>
 
         <div id="msg-container">
         </div>
 
         <div class="mx-auto">
-            <textarea id="msg-input" class="w-2/3" rows="3" placeholder="Comment...">
-            </textarea>
-
-            <button id="msg-submit" class="button column" type="submit">
-                Post
+            <textarea id="msg-input" class="w-2/3 p-2 mb-2 border border-teal-400 shadow-xs" rows="5" name="message" placeholder="My annotation..."></textarea>
+            <br>
+            <button id="msg-submit" class="bg-white hover:bg-gray-100 text-teal-500 font-semibold py-2 px-4 border border-teal-400 rounded shadow" type="submit">
+                Save annotation
             </button>
-
         </div>
-
     </div>
 
 </div>
