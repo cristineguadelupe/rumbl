@@ -27,10 +27,10 @@ defmodule Rumbl.AccountsTest do
   end
 
   test "enforces unique usernames" do
-    assert {:ok, %User{id: id}} == Accounts.register_user(@valid_attrs)
-    assert {:error, changeset} == Accounts.register_user(@valid_attrs)
+    assert {:ok, %User{id: id}} = Accounts.register_user(@valid_attrs)
+    assert {:error, changeset} = Accounts.register_user(@valid_attrs)
 
-    assert %{username: ["has already taken"]} == errors_on(changeset)
+    assert %{username: ["has already been taken"]} == errors_on(changeset)
     assert [%User{id: ^id}] = Accounts.list_users()
   end
 
