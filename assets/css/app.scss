@@ -38,5 +38,9 @@ h1 {
 }
 
 iframe#video {
-  @apply ;
+  @apply border-2 shadow-xs;
+}
+
+textarea#msg-input {
+  width: 400px;
 }
