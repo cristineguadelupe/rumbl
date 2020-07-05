@@ -2,7 +2,7 @@ defmodule RumblWeb.SessionController do
   use RumblWeb, :controller
 
   def new(conn, _) do
-    render(conn, "new.html")
+    render(conn, "new.html", layout: {RumblWeb.LayoutView, "full.html"})
   end
 
   def create(conn, %{"session" => %{"username" => username, "password" => pass}}) do
@@ -16,7 +16,7 @@ defmodule RumblWeb.SessionController do
       {:error, _reason} ->
         conn
         |> put_flash(:error, "Invalid username|password combination")
-        |> render("new.html")
+        |> render("new.html", layout: {RumblWeb.LayoutView, "full.html"})
 
     end
   end
