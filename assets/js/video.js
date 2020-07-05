@@ -49,6 +49,7 @@ let Video = {
 
         template.innerHTML = `
         <a href="#" data-seek="${this.esc(at)}">
+        [${this.formatTime(at)}]
         <b>${this.esc(user.username)}</b>: ${this.esc(body)}
         </a>
         `
@@ -56,6 +57,8 @@ let Video = {
         msgContainer.appendChild(template)
         msgContainer.scrollTop = msgContainer.scrollHeight
     }
+
+    
 
 }
 
