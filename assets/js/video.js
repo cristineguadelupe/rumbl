@@ -56,7 +56,16 @@ let Video = {
 
         msgContainer.appendChild(template)
         msgContainer.scrollTop = msgContainer.scrollHeight
-    }
+    },
+
+    scheduleMessages(msgContainer, annotations) {
+        clearTimeout(this.scheduleTimer)
+        this.scheduleTimer = setTimeout(() => {
+            let ctime = Player.getCurrentTime()
+            let remaining = this.renderAtTime(annotations, ctime, msgContainer)
+            this.scheduleMessages(msgContainer, remaining)
+        }, 1000)
+    },
 
     
 
