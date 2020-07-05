@@ -1,23 +1,56 @@
-<h1 class="text-teal-400 m-4 text-lg">New User</h1>
+<section class="flex flex-col md:flex-row h-screen items-center">
 
-<%= form_for @changeset, Routes.user_path(@conn, :create), fn f -> %>
+  <div class="bg-blue-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
+    <img src="<%= Routes.static_path(@conn, "/images/forest1.jpg") %>" alt="Reasons" class="w-full h-full object-cover">
+  </div>
 
-   <%= if @changeset.action do %>
-        <div clas="alert alert-danger">
-            <p class="text-red-700">Oops, something went wrong! Please check the errors below.</p>
+  <div class="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:mx-0 md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12
+        flex items-center justify-center">
+
+    <div class="w-full h-100">
+
+      <h1 class="text-6xl font-bold text-teal-700">Reasons</h1>
+      <h2 class="text-3xl font-bold text-cool-gray-600">Your learning path starts here</h2>
+      <hr class="my-6 border-gray-300 w-full">
+
+      <h1 class="text-xl text-cool-gray-500 md:text-2xl font-bold leading-tight mt-12 pb-4">
+        Create your account
+      </h1>
+
+      <%= form_for @changeset, Routes.user_path(@conn, :create), fn f -> %>
+
+        <%= if @changeset.action do %>
+            <div clas="alert alert-danger">
+                <p class="text-red-700">Oops, something went wrong! Please check the errors below.</p>
+            </div>
+        <% end %>
+
+        <div>
+            <label class="block text-gray-700">Name</label>
+            <%= text_input f, :name, placeholder: "Name", class: "w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-teal-500 focus:bg-white focus:outline-none"%>
+            <p class="text-red-500"><%= error_tag f, :name %></p>
         </div>
-    <% end %>
-    <div class="m-4">
-        <%= text_input f, :name, placeholder: "Name", class: "border-2 border-teal-400 p-2"%>
-        <p class="text-red-500"><%= error_tag f, :name %></p>
+
+        <div class="mt-4">
+          <label class="block text-gray-700">Username</label>
+          <%= text_input f, :username, placeholder: "Username", class: "w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-teal-500 focus:bg-white focus:outline-none" %>
+        </div>
+
+        <div class="mt-4">
+          <label class="block text-gray-700">Password</label>
+          <%= password_input f, :password, placeholder: "Password", class: "w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-teal-500 focus:bg-white focus:outline-none" %>
+        </div>
+
+        <%= submit "Register", class: "w-full block bg-teal-700 hover:bg-teal-500 focus:bg-blue-400 text-white font-semibold rounded-lg px-4 py-3 mt-6" %>
+
+      <% end %>
+
+      <hr class="my-6 border-gray-300 w-full mt-12">
+
+      <p class="mt-8">Already have an account?
+        <%= link "Log in", to: Routes.session_path(@conn, :new), class: "text-teal-700 hover:text-teal-500 font-semibold" %>
+      </p>
     </div>
-    <div class="m-4">
-        <%= text_input f, :username, placeholder: "Username", class: "border-2 border-teal-400 p-2"%>
-        <p class="text-red-500"><%= error_tag f, :username %></p>
-    </div>
-    <div class="m-4">
-        <%= password_input f, :password, placeholder: "Password", class: "border-2 border-teal-400 p-2" %>
-        <p class="text-red-500"><%= error_tag f, :password %></p>
-    </div>
-    <%= submit "Create User", class: "mx-4 p-4 bg-teal-400 text-teal-50 border hover:bg-teal-500"%>
-<% end %>
+  </div>
+
+</section>

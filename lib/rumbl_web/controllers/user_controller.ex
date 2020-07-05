@@ -18,7 +18,7 @@ defmodule RumblWeb.UserController do
 
     def new(conn, _params) do
         changeset = Accounts.change_registration(%User{}, %{})
-        render(conn, "new.html", changeset: changeset)
+        render(conn, "new.html", changeset: changeset, layout: {RumblWeb.LayoutView, "full.html"})
     end
 
     def create(conn, %{"user" => user_params}) do
@@ -29,7 +29,7 @@ defmodule RumblWeb.UserController do
                 |> redirect(to: Routes.user_path(conn, :index))
 
             {:error, %Ecto.Changeset{} = changeset} ->
-                render(conn, "new.html", changeset: changeset)
+                render(conn, "new.html", changeset: changeset, layout: {RumblWeb.LayoutView, "full.html"})
         end
     end
 
