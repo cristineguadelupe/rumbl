@@ -36,7 +36,7 @@
 
       <% end %>
 
-      <hr class="my-6 border-gray-300 w-full">
+      <hr class="my-6 border-gray-300 w-full mt-12">
 
       <p class="mt-8">Need an account? <a href="#" class="text-teal-700 hover:text-teal-500 font-semibold">Create an
               account</a></p>
