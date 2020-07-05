@@ -15,6 +15,9 @@
     <section class="container p-4 mx-auto bg-cool-gray-100">
       <nav role="navgation">
         <ul class="flex">
+          <li class="mr-6 bg-teal-100 p-4 text-teal-700 hover:bg-teal-300">
+            <%= link "Home", to: Routes.page_path(@conn, :index) %>
+          </li>
           <%= if @current_user do %>
             <li class="mr-6 bg-teal-50 p-4 text-teal-600 font-mono">
               Welcome back <%= @current_user.username %>
