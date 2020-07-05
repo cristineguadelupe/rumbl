@@ -10,43 +10,25 @@
   <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
 </head>
 
-<body class="bg-cool-gray-100">
-  <header class="border-b md:flex md:items-center md:justify-between p-4 pb-0 shadow-lg md:pb-4">
-
-    <!-- Logo text or image -->
-    <div class="flex items-center justify-between mb-4 md:mb-0">
-      <h1 class="leading-none text-2xl text-grey-darkest">
-        <span class="mr-6 bg-cool-gray-200 p-4 text-teal-700 hover:bg-cool-gray-300">
-          <%= link "Home", to: Routes.page_path(@conn, :index) %>
-        </span>
-      </h1>
+<body>
+  <header class="text-gray-700 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">Reasons</span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <%= if @current_user do %>
+          <%= link "My Videos", to: Routes.video_path(@conn, :index), class: "mr-5 bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0" %>
+          <%= link "Log out", to: Routes.session_path(@conn, :delete, @current_user), method: "delete", class: "mr-5 bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0"  %>
+        <% else %>
+          <%= link "Register", to: Routes.user_path(@conn, :new), class: "mr-5 bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0" %>
+          <%= link "Log in", to: Routes.session_path(@conn, :new), class: "mr-5 bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0" %>
+        <% end %>
+      </nav>
     </div>
-    <!-- END Logo text or image -->
-
-    <!-- Global navigation -->
-    <nav role="navigation">
-      <ul class="list-reset md:flex md:items-center">
-          <%= if @current_user do %>
-            <li class="mr-6 bg-teal-50 p-4 text-teal-600 font-mono">
-              Welcome back <%= @current_user.username %>
-            </li>
-            <li class="mr-6 bg-teal-100 p-4 text-teal-700 hover:bg-teal-300">
-              <%= link "My Videos", to: Routes.video_path(@conn, :index) %>
-            </li>
-            <li class="mr-6 bg-teal-100 p-4 text-teal-700 hover:bg-teal-300">
-              <%= link "Log out", to: Routes.session_path(@conn, :delete, @current_user), method: "delete" %>
-            </li>
-          <% else %>
-            <li class="mr-6 bg-teal-100 p-4 text-teal-700 hover:bg-teal-300">
-              <%= link "Register", to: Routes.user_path(@conn, :new) %>
-            </li>
-            <li class="mr-6 bg-teal-100 p-4 text-teal-700 hover:bg-teal-300">
-              <%= link "Log in", to: Routes.session_path(@conn, :new) %>
-            </li>
-          <% end %>
-        </ul>
-    </nav>
-
   </header>
 
   <main role="main" class="container p-4 mx-auto">
