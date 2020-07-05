@@ -15,8 +15,17 @@
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
 
       <a href="<%= Routes.page_path(@conn, :index) %>" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-teal-500 rounded-full" viewBox="0 0 24 24">
+        <%# <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-teal-500 rounded-full" viewBox="0 0 24 24">
           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg> %>
+        <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" stroke="none" fill="currentColor" class="w-10 h-10 text-teal-200 p-2 bg-teal-500 rounded-full">
+          <path d="M26.667,10C17.461,10,10,17.461,10,26.667c0,9.206,7.461,16.667,16.667,16.667c9.202,0,16.667-7.465,16.667-16.667
+            C43.333,17.464,35.868,10,26.667,10z M26.667,36.667c-5.525,0-10-4.476-10-10c0-5.525,4.475-10,10-10c5.524,0,10,4.475,10,10
+            C36.667,32.191,32.191,36.667,26.667,36.667z"/>
+          <rect x="19.729" y="43.062" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -19.2177 46.3949)" width="53.332" height="6.667"/>
+          <rect x="22.491" y="52.489" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -23.1228 55.8204)" width="66.666" height="6.668"/>
+          <path d="M36.667,90H90V36.667L36.667,90z M83.334,83.334H52.76l30.574-30.569V83.334z"/>
         </svg>
         <span class="ml-3 text-xl">Reasons</span>
       </a>
