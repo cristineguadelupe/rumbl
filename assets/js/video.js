@@ -67,6 +67,17 @@ let Video = {
         }, 1000)
     },
 
+    renderAtTime(annotations, seconds, msgContainer) {
+        return annotations.filter(ann => {
+            if(ann.at > seconds) {
+                return true
+            } else {
+                this.renderAnnotation(msgContainer, ann)
+                return false
+            }
+        })
+    },
+
     
 
 }
