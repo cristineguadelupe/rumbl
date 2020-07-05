@@ -12,4 +12,9 @@ defmodule RumblWeb.UserView do
     def username(%Accounts.User{username: username}) do
         username
     end
+
+    def render("user.json", %{user: user}) do
+        %{id: user_id, username: user.username}
+    end
+
 end
