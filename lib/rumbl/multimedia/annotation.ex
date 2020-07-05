@@ -7,7 +7,7 @@ defmodule Rumbl.Multimedia.Annotation do
     field :body, :string
 
     belongs_to :user, Rumbl.Accounts.User
-    belongs_to, :video, Rumbl.Multimedia.Video
+    belongs_to :video, Rumbl.Multimedia.Video
 
     timestamps()
   end
