@@ -32,6 +32,14 @@ defmodule RumblWeb.Auth do
         |> redirect(to: Routes.page_path(conn, :index))
         |> halt()
     end
-end
+  end
+
+  defp put_current_user(conn, user) do
+    token = Phoenix.Token.sign(conn, "user socket", user.id)
+
+    conn
+    |> assign(:current_user, user)
+    |> assign(:user_token, token)
+  end
 
 end
