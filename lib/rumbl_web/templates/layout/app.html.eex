@@ -11,13 +11,21 @@
 </head>
 
 <body class="bg-cool-gray-100">
-  <header>
-    <section class="container p-4 mx-auto bg-cool-gray-100">
-      <nav role="navgation">
-        <ul class="flex">
-          <li class="mr-6 bg-teal-100 p-4 text-teal-700 hover:bg-teal-300">
-            <%= link "Home", to: Routes.page_path(@conn, :index) %>
-          </li>
+  <header class="border-b md:flex md:items-center md:justify-between p-4 pb-0 shadow-lg md:pb-4">
+
+    <!-- Logo text or image -->
+    <div class="flex items-center justify-between mb-4 md:mb-0">
+      <h1 class="leading-none text-2xl text-grey-darkest">
+        <span class="mr-6 bg-cool-gray-200 p-4 text-teal-700 hover:bg-cool-gray-300">
+          <%= link "Home", to: Routes.page_path(@conn, :index) %>
+        </span>
+      </h1>
+    </div>
+    <!-- END Logo text or image -->
+
+    <!-- Global navigation -->
+    <nav role="navigation">
+      <ul class="list-reset md:flex md:items-center">
           <%= if @current_user do %>
             <li class="mr-6 bg-teal-50 p-4 text-teal-600 font-mono">
               Welcome back <%= @current_user.username %>
@@ -29,12 +37,15 @@
               <%= link "Log out", to: Routes.session_path(@conn, :delete, @current_user), method: "delete" %>
             </li>
           <% else %>
-            <li class="mr-6 bg-teal-100 p-4 text-teal-700 hover:bg-teal-300"><%= link "Register", to: Routes.user_path(@conn, :new) %></li>
-            <li class="mr-6 bg-teal-100 p-4 text-teal-700 hover:bg-teal-300"><%= link "Log in", to: Routes.session_path(@conn, :new) %></li>
+            <li class="mr-6 bg-teal-100 p-4 text-teal-700 hover:bg-teal-300">
+              <%= link "Register", to: Routes.user_path(@conn, :new) %>
+            </li>
+            <li class="mr-6 bg-teal-100 p-4 text-teal-700 hover:bg-teal-300">
+              <%= link "Log in", to: Routes.session_path(@conn, :new) %>
+            </li>
           <% end %>
         </ul>
-      </nav>
-    </section>
+    </nav>
 
   </header>
 
