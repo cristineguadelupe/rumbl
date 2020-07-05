@@ -78,7 +78,11 @@ let Video = {
         })
     },
 
-    
+    formatTime(at) {
+        let date = new Date(null)
+        date.setSeconds(at / 1000)
+        return date.toISOString().substr(14, 5)
+    },
 
 }
 
