@@ -88,16 +88,16 @@
           <% end %>
 
           <p><%= label f, :url, class: "text-gray-500" %></p>
+          <span class="text-red-700"><%= error_tag f, :url %></span>
           <%= text_input f, :url, placeholder: "Video Url", class: "w-full bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" %>
-          <p><%= error_tag f, :url %></P>
 
           <p><%= label f, :title, class: "text-gray-500" %></p>
+          <span class="text-red-700"><%= error_tag f, :title %></span>
           <%= text_input f, :title, placeholder: "Title", class: "w-full bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" %>
-          <p><%= error_tag f, :title %></P>
 
           <p><%= label f, :description, class: "text-gray-500" %></p>
+          <span class="text-red-700"><%= error_tag f, :description %></span>
           <%= textarea f, :description, placeholder: "Description", class: "w-full bg-white rounded border border-gray-400 focus:outline-none h-32 focus:border-indigo-500 text-base px-4 py-2 mb-4 resize-none" %>
-          <p><%= error_tag f, :description %></P>
 
           <p><%= label f, :category_id, "Category" %></p>
           <%= select f, :category_id, category_select_options(@categories), prompt: "Choose a category", class: "block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" %>
