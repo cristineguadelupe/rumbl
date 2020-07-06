@@ -1,9 +1,8 @@
-<div class="container">
+<h1 class="text-teal-700 text-center text-2xl"><%= @video.title %></h1>
+<section class="bg-cool-gray-100 flex flex-wrap p-4">
 
     <div class="flex flex-wrap">
-        <h1 class="w-full text-center border-b "><%= @video.title %></h1>
-
-        <div class="mx-4">
+        <div class="">
             <%= content_tag :div, id: "video",
             data: [id: @video.id, player_id: player_id(@video)] do %>
             <% end %>
@@ -41,4 +40,4 @@
         </div>
     </div> %>
 
-</div>
+</section>
