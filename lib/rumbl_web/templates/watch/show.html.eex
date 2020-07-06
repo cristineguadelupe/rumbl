@@ -25,9 +25,8 @@
         </div>
     </div>
 
-    <hr/>
-    <div class=​"row"​>
-        <div class=​"column"​>
+    <div class="mx-4"​>
+        <div>
             <h3>Users</h3>
             ​<ul id="user-list"​>
             </ul>
