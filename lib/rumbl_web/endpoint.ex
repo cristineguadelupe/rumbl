@@ -24,7 +24,7 @@ defmodule RumblWeb.Endpoint do
     at: "/",
     from: :rumbl,
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: ~w(css fonts images videos js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
