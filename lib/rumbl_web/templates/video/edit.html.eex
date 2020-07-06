@@ -1,4 +1,5 @@
-<h1>Edit Video</h1>
+<h1 class="text-teal-900 w-full text-2xl">Editing: <span class="text-teal-700 font-light text-xl"> <%= @video.title %> </span> </h1>
+<hr class="mt-4 border-gray-300 w-full">
 
 <%= render "form.html", Map.put(assigns, :action, Routes.video_path(@conn, :update, @video)) %>
 
