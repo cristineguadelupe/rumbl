@@ -73,9 +73,11 @@
       </div>
       <div class="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12">
         <div class="container px-5 py-4 mx-auto flex justify-center">
-        <div class="bg-white rounded-lg p-8 flex flex-col w-full mt-10 md:mt-0">
+        <div class="bg-cool-gray-50 shadow-sm rounded-lg p-8 flex flex-col w-full mt-10 md:mt-0">
         <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Add a new video to a path</h2>
-        <p class="leading-relaxed mb-5 text-gray-600">Copy and paste the video url from Youtube and choose a path to add it</p>
+
+        <p class="leading-relaxed mb-5 text-gray-600">
+        </p>
 
         <%= form_for @changeset, @action, fn f -> %>
 
@@ -103,7 +105,8 @@
           <%= submit "Save video", class: "text-white bg-teal-500 border-0 py-2 px-6 focus:outline-none hover:bg-teal-600 rounded text-lg mt-4" %>
         <% end %>
 
-        <p class="text-xs text-gray-500 mt-3">Chicharrones blog helvetica normcore iceland tousled brook viral artisan.</p>
+        <p class="text-xs text-gray-500 mt-3">
+        </p>
       </div>
     </div>
       </div>
