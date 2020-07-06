@@ -36,5 +36,10 @@
   <% end %>
 </section>
 <div class="mt-4">
-  <%= link "New Video", to: Routes.video_path(@conn, :new), class: "bg-cool-gray-300 py-3 px-8 mt-4 rounded text-sm font-semibold hover:bg-opacity-75" %>
+  <span class="mx-2">
+    <%= link "New Video", to: Routes.video_path(@conn, :new), class: "bg-cool-gray-300 py-3 px-8 mt-4 rounded text-sm font-semibold hover:bg-opacity-75" %>
+  </span>
+  <span class="mx-2">
+    <%= link "New Path", to: Routes.video_path(@conn, :new), class: "bg-cool-gray-300 py-3 px-8 mt-4 rounded text-sm font-semibold hover:bg-opacity-75" %>
+  <span>
 </div>
