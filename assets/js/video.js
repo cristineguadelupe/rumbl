@@ -15,7 +15,10 @@ let Video = {
         let msgContainer = document.getElementById("msg-container")
         let msgInput = document.getElementById("msg-input")
         let postButton = document.getElementById("msg-submit")
-        let vidChannel = socket.channel("videos:" + videoId)
+        let lastSeenId = 0
+        let vidChannel = socket.channel("videos:" + videoId, () => {
+            return {lastSeenId: lastSeenId}
+        })
 
         postButton.addEventListener("click", e => {
             let payload = {body: msgInput.value, at: Player.getCurrentTime()}
@@ -25,6 +28,7 @@ let Video = {
         })
 
         vidChannel.on("new_annotation", (resp) => {
+            lastSeenId = resp.id
             this.renderAnnotation(msgContainer, resp)
         })
 
