@@ -14,9 +14,9 @@
       <div class="my-4">
       <h3 class="text-xs uppercase">Current status:</h3>
       <h2 class="tracking-wide">
-        Object in JavaScript
+        <span class="text-green-500">Watched</span>
         <br />
-        (Challenge)
+        <span class="text-gray-500">(11 annotations)</span>
       </h2>
       </div>
       <div>
