@@ -13,4 +13,16 @@ defmodule RumblWeb.VideoView do
     "#{annotations} #{inflect}"
   end
 
+  def video_status_class(video) do
+    status = video.status
+    cond do
+      status == "Unwatched" ->
+        "text-red-900"
+      status == "Review" ->
+        "text-orange-800"
+      status == "Done" ->
+        "text-teal-700"
+    end
+  end
+
 end
