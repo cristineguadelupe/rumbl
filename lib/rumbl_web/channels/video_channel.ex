@@ -9,7 +9,7 @@ defmodule RumblWeb.VideoChannel do
     last_seen_id = params["last_seen_id"] || 0
     video_id = String.to_integer(video_id)
     video = Multimedia.get_video!(video_id)
-    IO.inspect(last_seen_id)
+    # IO.inspect(last_seen_id)
 
     annotations =
       video
