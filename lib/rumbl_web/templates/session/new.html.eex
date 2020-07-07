@@ -9,10 +9,10 @@
 
     <div class="w-full h-100">
 
-      <a href="<%= Routes.page_path(@conn, :index) %>">
+      <a class="flex items-center" href="<%= Routes.page_path(@conn, :index) %>">
         <img class="h-15" src="<%= Routes.static_path(@conn, "/images/hexlogo.png") %>">
+        <h1 class="text-6xl text-teal-800 font-medium title-font ml-2">Reasons</h1>
       </a>
-      <h1 class="text-6xl text-teal-800 font-medium title-font">Reasons</h1>
       <h2 class="text-3xl text-cool-gray-600">Your learning path starts here</h2>
       <hr class="my-6 border-gray-300 w-full">
 
