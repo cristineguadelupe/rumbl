@@ -30,6 +30,10 @@
         <span class="ml-3 text-xl">Reasons</span>
       </a>
 
+      <%= if @current_user do %>
+        <h1 class="md:ml-auto flex flex-wrap items-center text-base justify-center">Welcome back <%= @current_user.name %>!</h1>
+      <% end %>
+
       <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
         <%= if @current_user do %>
           <%= link "My Paths", to: Routes.video_path(@conn, :index), class: "mr-5 bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0" %>
