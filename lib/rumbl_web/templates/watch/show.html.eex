@@ -26,10 +26,12 @@
     </div>
 
     <div class="my-4 w-full"​>
-        <div class="flex">
+        <div class="">
             <h3 class="text-teal-500 pr-4">Watching now:</h3>
-            ​<ul id="user-list"​>
-            </ul>
+            <div class="">
+                ​<ul id="user-list"​ class="-mt-4 ml-1">
+                </ul>
+            <div>
         </div>
     ​</div>
 
