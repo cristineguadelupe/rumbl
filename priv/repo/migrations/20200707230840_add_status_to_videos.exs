@@ -3,7 +3,7 @@ defmodule Rumbl.Repo.Migrations.AddStatusToVideos do
 
   def change do
     alter table(:videos) do
-      add :status, :string
+      add :status, :string, default: "Unwatched"
     end
   end
 end
