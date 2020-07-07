@@ -49,20 +49,27 @@ defmodule Rumbl.Accounts do
     end
 
     def authenticate_by_username_and_pass(username, given_pass) do
-        user = get_user_by(username: username)
+        try do
+            user = get_user_by(username: username)
 
-        cond do
-            # a && b - b if a is true, else a
-            user && Pbkdf2.verify_pass(given_pass, user.password_hash) ->
-                {:ok, user}
+            cond do
+                # a && b - b if a is true, else a
+                user && Pbkdf2.verify_pass(given_pass, user.password_hash) ->
+                    {:ok, user}
 
-            user ->
-                {:error, :unauthorized}
+                user ->
+                    {:error, :unauthorized}
 
-            true ->
+                true ->
+                    Pbkdf2.no_user_verify()
+                    {:error, :not_found}
+            end
+        rescue
+            Ecto.NoResultsError ->
                 Pbkdf2.no_user_verify()
                 {:error, :not_found}
         end
+
     end
 
 end
