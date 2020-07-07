@@ -29,7 +29,9 @@ let Video = {
                 {user: user, metas: [first, ...rest]}) => {
                 let count = rest.length + 1
                 // return `<li>${user.username}: (${count})</li>`
-                return `<li class="h-10 w-10 mx-5 text-center shadow-outline-teal ml-auto bg-teal-700 rounded-full flex justify-center items-center">${user.username}: (${count})</li>`
+                return `<li class="h-10 w-10 mx-5 text-center shadow-outline-teal ml-auto bg-teal-700 rounded-full flex justify-center items-center">
+                <p class="text-teal-50">${user.username.slice(0, 2)}<p>
+                </li>`
             }).join("")
         })
 
