@@ -19,7 +19,7 @@ let Video = {
         let userList = document.getElementById("user-list")
         let lastSeenId = 0
         let vidChannel = socket.channel("videos:" + videoId, () => {
-            return {lastSeenId: lastSeenId}
+            return {last_seen_id: lastSeenId}
         })
 
         let presence = new Presence(vidChannel)
