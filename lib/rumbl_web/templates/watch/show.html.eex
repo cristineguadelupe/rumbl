@@ -2,13 +2,13 @@
 <hr class="my-2 border-gray-300 w-full">
 
     <div class="flex flex-wrap">
-        <div class="">
+        <div class="mr-4">
             <%= content_tag :div, id: "video",
             data: [id: @video.id, player_id: player_id(@video)] do %>
             <% end %>
         </div>
 
-        <div class="px-4 w-2/5 border-l">
+        <div class="w-2/5">
             <h3 class="text-teal-700 text-lg pb-2">Annotations:</h3>
 
             <div class="py-2 text-teal-900" id="msg-container">
