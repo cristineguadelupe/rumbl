@@ -58,6 +58,7 @@ let Video = {
             .receive("ok", resp => {
                 let ids = resp.annotations.map(ann => ann.id)
                 if(ids.length > 0){lastSeenId = Math.max(...ids)}
+                //console.log("Last seen id: " + lastSeenId)
                 this.scheduleMessages(msgContainer, resp.annotations)
             })
             .receive("error", reason => console.log("join failed", reason))
