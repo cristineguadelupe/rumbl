@@ -16,7 +16,7 @@
       <h2 class="tracking-wide">
         <span class="text-green-500">Watched</span>
         <br />
-        <span class="text-gray-500">(<%= length(video.annotations)%> annotations) </span>
+        <span class="text-gray-500">(<%= number_of_annotations(video) %>) </span>
       </h2>
       </div>
       <div>
