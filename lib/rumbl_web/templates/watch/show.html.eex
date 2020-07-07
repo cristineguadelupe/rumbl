@@ -1,5 +1,5 @@
-<h1 class="text-teal-700 text-center text-2xl"><%= @video.title %></h1>
-<section class="bg-cool-gray-100 flex flex-wrap p-4">
+<h1 class="text-teal-900 w-full text-2xl">Watching: <span class="text-teal-700 font-light text-xl"> <%= @video.title %> </span> </h1>
+<hr class="my-2 border-gray-300 w-full">
 
     <div class="flex flex-wrap">
         <div class="">
