@@ -33,6 +33,8 @@
             <div class="">
                 ​<ul id="user-list"​ class="-mt-4 ml-1 flex justify-center">
                 </ul>
+                <ul id="device-list"​ class="mt-1 flex justify-center">
+                </ul>
             <div>
         </div>
     ​</div>
