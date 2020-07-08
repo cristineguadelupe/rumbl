@@ -3,7 +3,7 @@
 <div class="container px-5 py-4 mx-auto flex flex-wrap">
     <div class="w-full mx-auto">
       <div class="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4">
-        <img alt="gallery" class="w-full object-cover h-full object-center block opacity-100 absolute inset-0" src="<%= Routes.static_path(@conn, "/images/autumn3.jpg") %>">
+        <img alt="gallery" class="w-full object-cover h-full object-center block opacity-100 absolute inset-0" src="<%= Routes.static_path(@conn, "/images/autumn.jpg") %>">
         <div class="text-center relative z-10 w-full">
           <span class="w-full flex justify-center mx-auto">
             <img class="h-15" src="<%= Routes.static_path(@conn, "/images/hexlogo.png") %>">
