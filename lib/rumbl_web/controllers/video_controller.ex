@@ -46,7 +46,8 @@ defmodule RumblWeb.VideoController do
       {:ok, video} ->
         conn
         |> put_flash(:info, "Video updated successfully.")
-        |> redirect(to: Routes.video_path(conn, :show, video))
+        # |> redirect(to: Routes.video_path(conn, :show, video))
+        |> redirect(to: Routes.video_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", video: video, changeset: changeset)
