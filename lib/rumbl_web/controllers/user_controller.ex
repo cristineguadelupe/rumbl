@@ -25,7 +25,7 @@ defmodule RumblWeb.UserController do
         case Accounts.register_user(user_params) do
             {:ok, user} ->
                 conn
-                |> put_flash(:info, "#{user.name} created!")
+                |> put_flash(:info, "#{user.name} created! Log in and enjoy Reasons!")
                 |> redirect(to: Routes.session_path(conn, :new))
 
             {:error, %Ecto.Changeset{} = changeset} ->
