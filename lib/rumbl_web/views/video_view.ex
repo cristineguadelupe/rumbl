@@ -19,7 +19,7 @@ defmodule RumblWeb.VideoView do
       status == "Unwatched" ->
         "text-red-900"
       status == "Review" ->
-        "text-orange-800"
+        "text-orange-700"
       status == "Done" ->
         "text-teal-700"
     end
