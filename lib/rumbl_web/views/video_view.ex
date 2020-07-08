@@ -25,4 +25,8 @@ defmodule RumblWeb.VideoView do
     end
   end
 
+  def wrap_video_title(title) do
+    String.slice(title, 0..35)
+  end
+
 end
