@@ -8,7 +8,8 @@ defmodule RumblWeb.VideoController do
 
   def index(conn, _params, current_user) do
     videos = Multimedia.list_user_videos(current_user)
-    render(conn, "index.html", videos: videos)
+    paths = Multimedia.list_alphabetical_categories()
+    render(conn, "index.html", videos: videos, paths: paths)
   end
 
   def new(conn, _params, _current_user) do
