@@ -12,6 +12,6 @@
 
 alias Rumbl.Multimedia
 
-for category <- ~w(Action Drama Romance Comedy Sci-fi) do
+for category <- ~w(English Games Algebra Python Elixir) do
   Multimedia.create_category!(category)
 end
